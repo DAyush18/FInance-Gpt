@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import { RippleButton } from "@/components/ui/RippleButton";
 import { useProgress } from "@/contexts/ProgressContext";
 
+
 const learningModules = [
 	{
 		id: "budgeting",

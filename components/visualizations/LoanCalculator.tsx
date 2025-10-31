@@ -13,6 +13,7 @@ import {
 	Calendar,
 	BarChart3,
 	Info,
+	IndianRupeeIcon,
 } from "lucide-react";
 
 // Loan type configuration with specific details
@@ -321,7 +322,7 @@ export default function LoanCalculator() {
 					</label>
 					<div className="relative">
 						<span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
-							$
+							₹
 						</span>
 						<input
 							type="number"
@@ -340,7 +341,7 @@ export default function LoanCalculator() {
 						/>
 					</div>
 					<div className="text-xs text-gray-500 dark:text-gray-500">
-						Maximum loan amount: $999,999,999
+						Maximum loan amount: ₹999,999,999
 					</div>
 				</motion.div>
 
@@ -447,7 +448,7 @@ export default function LoanCalculator() {
 						{
 							label: "Total Payment",
 							value: calculation.totalPayment,
-							icon: DollarSign,
+							icon: IndianRupeeIcon,
 							color: "text-emerald-600 dark:text-emerald-400",
 							bgColor:
 								"from-emerald-50/80 to-green-100/60 dark:from-emerald-900/20 dark:to-green-900/40",
@@ -503,9 +504,9 @@ export default function LoanCalculator() {
 								</div>
 								<div
 									className={`text-2xl font-bold ${result.color} break-words leading-tight`}
-									title={`$${fullValue}`}
+									title={`₹${fullValue}`}
 								>
-									<span className="inline-block">$</span>
+									<span className="inline-block">₹</span>
 									<span className="inline-block">{formattedValue}</span>
 								</div>
 							</motion.div>
@@ -581,9 +582,9 @@ export default function LoanCalculator() {
 										</div>
 										<div
 											className="text-lg font-bold text-gray-900 dark:text-white break-words leading-tight"
-											title={`$${fullBalance}`}
+											title={`₹${fullBalance}`}
 										>
-											<span className="inline-block">$</span>
+											<span className="inline-block">₹</span>
 											<span className="inline-block">{formattedBalance}</span>
 										</div>
 										<div className="text-xs text-gray-500 dark:text-gray-500 truncate">
@@ -634,25 +635,25 @@ export default function LoanCalculator() {
 														{entry.month}
 													</td>
 													<td className="px-4 py-3 text-sm text-right text-gray-700 dark:text-gray-300">
-														$
+														₹
 														{entry.emi.toLocaleString("en-IN", {
 															maximumFractionDigits: 0,
 														})}
 													</td>
 													<td className="px-4 py-3 text-sm text-right text-emerald-600 dark:text-emerald-400">
-														$
+														₹
 														{entry.principal.toLocaleString("en-IN", {
 															maximumFractionDigits: 0,
 														})}
 													</td>
 													<td className="px-4 py-3 text-sm text-right text-amber-600 dark:text-amber-400">
-														$
+														₹
 														{entry.interest.toLocaleString("en-IN", {
 															maximumFractionDigits: 0,
 														})}
 													</td>
 													<td className="px-4 py-3 text-sm text-right text-gray-700 dark:text-gray-300">
-														$
+														₹
 														{entry.balance.toLocaleString("en-IN", {
 															maximumFractionDigits: 0,
 														})}

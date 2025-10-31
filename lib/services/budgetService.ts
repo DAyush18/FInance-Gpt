@@ -261,7 +261,7 @@ class BudgetService {
           category: category.name,
           insight: `You're spending ${percentage}% more than your target on ${category.name}`,
           type: 'warning',
-          action: `Consider reducing ${category.name} spending by $${overspend}`
+          action: `Consider reducing ${category.name} spending by ₹${overspend}`
         });
       } else if (category.value < category.target * 0.8) {
         insights.push({

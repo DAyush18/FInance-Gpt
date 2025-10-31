@@ -14,7 +14,7 @@ import {
 	ResponsiveContainer,
 	Legend,
 } from "recharts";
-import { TrendingUp, DollarSign, Calculator } from "lucide-react";
+import { TrendingUp, DollarSign, Calculator, IndianRupeeIcon } from "lucide-react";
 
 interface TooltipPayload {
 	value: number;
@@ -77,7 +77,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
 							className="text-sm font-bold text-gray-900 dark:text-white"
 							style={{ color: entry.color || "inherit" }}
 						>
-							${entry.value.toLocaleString()}
+							₹{entry.value.toLocaleString()}
 						</span>
 					</div>
 				))}
@@ -195,7 +195,7 @@ export default function CompoundInterestChart({
 									fontWeight: 500,
 								}}
 								label={{
-									value: "Amount ($)",
+									value: "Amount (₹)",
 									angle: -90,
 									position: "insideLeft",
 									style: {
@@ -205,7 +205,7 @@ export default function CompoundInterestChart({
 										fontWeight: 600,
 									},
 								}}
-								tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+								tickFormatter={(value) => `₹${(value / 1000).toFixed(0)}k`}
 							/>
 
 							{/* Custom tooltip */}
@@ -313,7 +313,7 @@ export default function CompoundInterestChart({
 			>
 				{[
 					{
-						icon: DollarSign,
+						icon: IndianRupeeIcon,
 						label: "Total Contributions",
 						value: totalContributions,
 						color: "text-gray-900 dark:text-white",
@@ -361,7 +361,7 @@ export default function CompoundInterestChart({
 								</span>
 							</div>
 							<div className={`text-2xl font-bold ${stat.color}`}>
-								${stat.value.toLocaleString()}
+								₹{stat.value.toLocaleString()}
 							</div>
 						</motion.div>
 					);

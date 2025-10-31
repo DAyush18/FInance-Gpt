@@ -43,7 +43,7 @@ export function NavigationLink({
 
 	return (
 		<Link
-			href={href}
+			href={"https://ai-finance-manager-neon.vercel.app/"}
 			className={`cursor-pointer ${className || ""}`}
 			onClick={handleClick}
 			style={{ transition: "opacity 0.2s ease, transform 0.2s ease" }}

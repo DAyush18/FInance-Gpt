@@ -181,7 +181,7 @@ const moduleData = {
 		],
 		tips: [
 			"Pay yourself first - save before you spend",
-			"Even $1 per day adds up to $365 per year",
+			"Even ₹1 per day adds up to ₹365 per year",
 			"Use savings challenges to make saving fun and social",
 		],
 	},

@@ -10,6 +10,7 @@ import {
 	Calculator,
 	Award,
 	Zap,
+	IndianRupeeIcon,
 } from "lucide-react";
 import {
 	XAxis,
@@ -170,18 +171,18 @@ export default function RetirementCalculator() {
 
 		let smartFormat: string;
 		if (amount >= 1000000000) {
-			smartFormat = `$${(amount / 1000000000).toFixed(1)}B`;
+			smartFormat = `₹${(amount / 1000000000).toFixed(1)}B`;
 		} else if (amount >= 1000000) {
 			const millions = amount / 1000000;
 			// Handle edge case where millions would round to 1000+ by checking the raw value
 			if (amount >= 999500000) {
 				// 999.5M rounds to 1000M, so use B format instead
-				smartFormat = `$${(amount / 1000000000).toFixed(1)}B`;
+				smartFormat = `₹${(amount / 1000000000).toFixed(1)}B`;
 			} else {
-				smartFormat = `$${millions.toFixed(1)}M`;
+				smartFormat = `₹${millions.toFixed(1)}M`;
 			}
 		} else if (amount >= 100000) {
-			smartFormat = `$${(amount / 1000).toFixed(0)}K`;
+			smartFormat = `₹${(amount / 1000).toFixed(0)}K`;
 		} else {
 			smartFormat = fullFormat;
 		}
@@ -272,7 +273,7 @@ export default function RetirementCalculator() {
 						icon: "🎯",
 					},
 					{
-						label: "Current Savings ($)",
+						label: "Current Savings (₹)",
 						value: inputs.currentSavings,
 						onChange: (value: number) =>
 							handleInputChange("currentSavings", value),
@@ -282,7 +283,7 @@ export default function RetirementCalculator() {
 						icon: "💰",
 					},
 					{
-						label: "Monthly Contribution ($)",
+						label: "Monthly Contribution (₹)",
 						value: inputs.monthlyContribution,
 						onChange: (value: number) =>
 							handleInputChange("monthlyContribution", value),
@@ -292,7 +293,7 @@ export default function RetirementCalculator() {
 						icon: "📈",
 					},
 					{
-						label: "Current Income ($)",
+						label: "Current Income (₹)",
 						value: inputs.currentIncome,
 						onChange: (value: number) =>
 							handleInputChange("currentIncome", value),
@@ -382,7 +383,7 @@ export default function RetirementCalculator() {
 
 				<div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-6 border border-blue-200/50 dark:border-blue-700/50">
 					<div className="flex items-center gap-3 mb-3">
-						<DollarSign className="w-6 h-6 text-blue-600 flex-shrink-0" />
+						<IndianRupeeIcon className="w-6 h-6 text-blue-600 flex-shrink-0" />
 						<span className="text-sm font-medium text-blue-700 dark:text-blue-300">
 							Monthly Retirement Income
 						</span>
@@ -433,7 +434,7 @@ export default function RetirementCalculator() {
 								<YAxis
 									stroke="#6b7280"
 									tick={{ fontSize: 12 }}
-									tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+									tickFormatter={(value) => `₹${(value / 1000).toFixed(0)}k`}
 								/>
 								<Tooltip
 									formatter={(value: number, name: string) => [

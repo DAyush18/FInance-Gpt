@@ -368,7 +368,7 @@ export default function VisualizationsPage() {
 										min: 0,
 										max: 1000000,
 										step: 100,
-										prefix: "$",
+										prefix: "₹",
 									},
 									{
 										label: "Annual Interest Rate",
@@ -395,7 +395,7 @@ export default function VisualizationsPage() {
 										min: 0,
 										max: 10000,
 										step: 50,
-										prefix: "$",
+										prefix: "₹",
 									},
 								].map((control, index) => (
 									<motion.div
@@ -487,24 +487,24 @@ export default function VisualizationsPage() {
 										return [
 											{
 												label: "Total Invested",
-												value: `$${Math.round(totalInvested).toLocaleString(
-													"en-US"
+												value: `₹${Math.round(totalInvested).toLocaleString(
+													"en-IN"
 												)}`,
 												color: "text-gray-900 dark:text-white",
 												icon: "💼",
 											},
 											{
 												label: "Interest Earned",
-												value: `$${Math.round(interestEarned).toLocaleString(
-													"en-US"
+												value: `₹${Math.round(interestEarned).toLocaleString(
+													"en-IN"
 												)}`,
 												color: "text-emerald-600 dark:text-emerald-400",
 												icon: "📊",
 											},
 											{
 												label: "Final Balance",
-												value: `$${Math.round(finalBalance).toLocaleString(
-													"en-US"
+												value: `₹${Math.round(finalBalance).toLocaleString(
+													"en-IN"
 												)}`,
 												color: "text-indigo-600 dark:text-indigo-400",
 												icon: "🎯",

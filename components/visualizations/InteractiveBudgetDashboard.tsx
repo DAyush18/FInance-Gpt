@@ -166,9 +166,10 @@ export default function InteractiveBudgetDashboard() {
 	};
 
 	const formatCurrency = (amount: number) => {
-		return new Intl.NumberFormat("en-US", {
+		return new Intl.NumberFormat("en-IN", {
 			style: "currency",
-			currency: "USD",
+			currency: "INR",
+			maximumFractionDigits: 2,
 		}).format(amount);
 	};
 
@@ -602,7 +603,7 @@ export default function InteractiveBudgetDashboard() {
 														{stock.ticker}
 													</span>
 													<p className="text-sm text-gray-600 dark:text-gray-400">
-														${stock.price}
+														₹{stock.price}
 													</p>
 												</div>
 												<div className="text-right">
@@ -610,7 +611,7 @@ export default function InteractiveBudgetDashboard() {
 														{stock.change_percentage}
 													</span>
 													<p className="text-sm text-gray-600 dark:text-gray-400">
-														${stock.change_amount}
+														₹{stock.change_amount}
 													</p>
 												</div>
 											</div>
@@ -635,7 +636,7 @@ export default function InteractiveBudgetDashboard() {
 														{stock.ticker}
 													</span>
 													<p className="text-sm text-gray-600 dark:text-gray-400">
-														${stock.price}
+														₹{stock.price}
 													</p>
 												</div>
 												<div className="text-right">
@@ -643,7 +644,7 @@ export default function InteractiveBudgetDashboard() {
 														{stock.change_percentage}
 													</span>
 													<p className="text-sm text-gray-600 dark:text-gray-400">
-														${stock.change_amount}
+														₹{stock.change_amount}
 													</p>
 												</div>
 											</div>
